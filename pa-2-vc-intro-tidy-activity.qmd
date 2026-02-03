@@ -9,13 +9,13 @@ execute:
 ---
 
 
-**NAMES:** Add names here  
+**NAMES:** Emmanuel Laureano and Cullin Kimura
 
 
 ```{r}
-#| label: add-label-0
-
-
+#| label: setup
+#| include: FALSE
+library(tidyverse)
 ```
 
 Today you will be creating and manipulating vectors, lists, and data frames to uncover a top secret message using the `tidyverse`. First thing is to include the package in a setup chunk above!  
@@ -89,14 +89,16 @@ Using the above, we can complete the following 5 steps within a few lines of cod
 If you want to look at `my_symbols` click on it under the Environment Tab in the top right panel.  
 
 ```{r}
-#| label: add-label-1
-# add comment here
-
-
+#| label: create vectors into dataframe
+# Create one long vector with all of the symbols, turn it into a dataframe, with one column named "symbols", collects total number symbols in dataframe, create new variable in frame that assigns a number to each symbol
+my_symbols <- tibble(symbols = c(lower_case, 
+                                 upper_case, 
+                                 punctuation)) |> 
+              mutate(num = row_number()) 
 ```
 
 
-
+making a change
 
 
 <!-- Computer Stage your Changes, Commit, and Push to the Git Repository-->
