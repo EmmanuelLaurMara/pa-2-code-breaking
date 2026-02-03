@@ -124,9 +124,17 @@ By altering this top secret set of numbers, you will be able to create a message
 9.  Square every number.
 
 ```{r}
-#| label: add-label-2
-#add comment here
-#there are several ways to do this, the way below doesn't overwrite any column so you "don't lose work"
+#| label: Alterate top secrete numbers 
+#Add 14 to everyone number in set then multiply by 18 then subtract 257 to exp then square the number.
+
+code_break <- top_secret |> 
+  as_tibble() |> 
+  mutate(step6 = top_secret + 14,
+         step7 = step6*18 - 257,
+         step8 = exp(step7),
+         step9 = step8^2)
+
+head(code_break) #see the first few lines here
 
 
 
